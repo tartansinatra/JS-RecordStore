@@ -16,7 +16,7 @@ RecordStore.prototype = {
   },
   listInventory: function(){
     for (record of this.inventory)
-      console.log(record.artist + ', ' +record.title);
+      console.log(record.artist + ', ' +record.title +"\n");
   },
 
   finStrength: function(){

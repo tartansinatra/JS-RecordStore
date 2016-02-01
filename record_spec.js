@@ -25,9 +25,13 @@ describe('RecordStore', function(){
   });
 
   it('should be able to list the inventory', function(){
+    testStore.addRecord(record1)
+    testStore.addRecord(record2)
+    testStore.addRecord(record3)
+
     testStore.listInventory()
     // expect(testStore.inventory[1]).to.contain("Guns n Roses");
-    // expect(deepTestStore).to.have.deep.property('record1.name', 'Guns n Roses');
+    // expect(deepTestStore).to.have.deep.property(record1.name, 'Guns n Roses');
   });
 
   it('should be able to sell rcords', function(){
@@ -42,3 +46,17 @@ describe('RecordStore', function(){
 
 })
 
+describe('RecordCollector', function(){
+
+  beforeEach(function(){
+      collector = new RecordCollector('Bob');
+      record1 = new Record('The Beatles', 'Sgt Pepper', 5);
+      record2 = new Record('Metallica', 'Exile on Main Street', 5);
+  });
+
+  it('should be able to buy records', function(){
+    this.collection.push(record);
+    assert.equal(45, collector.wallet)
+  })
+
+})
