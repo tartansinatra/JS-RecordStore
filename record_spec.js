@@ -55,7 +55,7 @@ describe('RecordCollector', function(){
   });
 
   it('should be able to buy records', function(){
-    this.collection.push(record);
+    collector.buyRecord(record1);
     assert.equal(45, collector.wallet)
   })
 
